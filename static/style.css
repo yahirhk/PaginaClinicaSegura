@@ -1,0 +1,241 @@
+*{
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  font-family: sans-serif;
+
+}
+/*Estilo del login*/
+.login-box {
+    max-width: 400px;
+    margin: 0 auto;
+    border: none;
+    padding: 20px;
+    background-image: radial-gradient(circle at 50% 50%, #0062ff 0, #005aff 25%, #464ff9 50%, #7242ee 75%, #9032e2 100%);
+    position: relative;
+    top: 150px;
+    left: 15px;
+  }
+  
+  .login-box form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .login-box label {
+    margin-bottom: 10px;
+  }
+  
+  .login-box input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+  }
+  
+  .login-box button {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+
+
+
+/*Estilo del registro*/
+.registro {
+  margin: 20px auto;
+  width: 300px;
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+input[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+a {
+  color: rgb(0, 85, 255);
+  text-decoration: underline;
+  top: 150px;
+  left: 15px;
+}
+
+a:hover {
+  color: darkblue;
+  top: 150px;
+  left: 15px;
+}
+
+.cerrar {
+  background-image: radial-gradient(circle at 50% 50%, #e8b23f 0, #e9a638 12.5%, #e6972d 25%, #df831d 37.5%, #d46b05 50%, #c85100 62.5%, #c03900 75%, #bb1e00 87.5%, #b90003 100%);
+}
+
+
+.body {
+  background-image: url('https://fondosmil.com/fondo/489.jpg');
+  background-size: cover;
+  background-position: auto;
+  background-repeat: no-repeat;
+}
+
+/*Estilos de las paginas*/
+.cuerpo{
+    background-color: black;
+}
+.mynavbar {
+    background-color: rgb(184, 253, 255);
+  }
+  
+header{
+    height: 100vh;
+    background-color: rgb(184, 253, 255);
+}
+
+.icono{
+    width: 50px;
+    height: 50px;
+}
+
+.usuario{
+    width: 40px;
+    height: 40px;
+    position: relative;
+    left: 5px;
+}
+
+.container-fluid{
+    justify-content: center;
+}
+.carrusel-container{
+    width: auto;
+    height: auto;
+}
+
+.carousel-inner{
+    width: auto;
+    height: auto;
+
+}
+
+
+.form{
+    width: 400px;
+    margin: 0 auto;
+}
+
+
+.label{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.input{
+    display: block;
+    width: 100%;
+    border: 10px;
+    padding: 10px;
+    cursor: pointer;
+    background-color: rgb(206, 255, 253);
+}
+
+/*Estilo de la tabla*/
+table.usuarios {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+table.usuarios thead tr {
+  background-color: #009879;
+  color: #ffffff;
+  text-align: left;
+}
+
+table.usuarios th,
+table.usuarios td {
+  padding: 12px 15px;
+}
+
+table.usuarios tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+table.usuarios tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+table.usuarios tbody tr:last-of-type {
+  border-bottom: 2px solid #009879;
+}
+
+table.usuarios tbody td a,
+table.usuarios tbody td button {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: #ffffff;
+  background-color: #009879;
+  border: none;
+  cursor: pointer;
+}
+
+table.usuarios tbody td a:hover,
+table.usuarios tbody td button:hover {
+  background-color: #007f6e;
+}
+
+form button[type="submit"] {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #009879;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+form button[type="submit"]:hover {
+  background-color: #007f6e;
+}
+
+.boton-container {
+  display: inline-block;
+  margin-right: 10px; /* Espacio entre los contenedores de botones */
+}
+
+.boton-container:last-of-type {
+  margin-right: 0; /* Eliminar el espacio después del último contenedor */
+}

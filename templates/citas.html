@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/static/cita.css">
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <title>Locochona</title>
+
+</head>
+
+<body class="cuerpo">
+  <nav class="navbar navbar-expand-lg navbar-light mynavbar">
+    <div class="container-fluid">
+      <img class="icono" src="/static/images/icono.png" alt="...">
+        <a class="navbar-brand" href="">MedicaLocochona</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          <a class="nav-link active" href="especialidades.html">Especialidades</a>
+          <a class="nav-link active" href="servicios.html">Servicios</a>
+          <a class="nav-link active" href="pacientes.html">Pacientes</a>
+          <a class="nav-link active" href="contactanos.html">Contactanos</a>
+          <a class="nav-link active"><button class="cerrar" id="cerrar-sesion">Cerrar sesion</button></a>
+          <!--<li><span class="navbar-text">Bienvenido, {{ username }}</span></li>
+          <!-- Button trigger modal -->
+        </div>
+      </div>
+    </div>
+  </nav>
+  <script>
+    const botonCerrarSesion = document.getElementById('cerrar-sesion');
+      botonCerrarSesion.addEventListener('click', cerrarSesion);
+
+      function cerrarSesion() {
+        // Eliminar cualquier información de sesión del usuario.
+
+        // Redirigir al usuario a la página de inicio de sesión.
+        window.location.href = '/';
+      }
+  </script>
+
+<form action="{{ url_for('citas') }}" method="post" class="grid-form">
+  <div class="grid-col">
+    <label for="nombre">Nombre completo <span class="required">*</span></label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <label for="fecha">Fecha de cita y horario de atención<span class="required">*</span></label>
+    <input type="datetime-local" id="fecha" name="fecha" required>
+
+    <label for="telefono">Teléfono <span class="required">*</span></label>
+    <input type="text" id="telefono" name="telefono" required>
+
+    <label for="email">Correo electrónico <span class="required">*</span></label>
+    <input type="email" id="email" name="correo" required>
+  </div>
+
+  <div class="grid-col">
+    <div class="form-group">
+      <label for="genero">Género <span class="required">*</span></label>
+      <select id="genero" name="genero" required>
+        <option value="">Selecciona una opción</option>
+        <option value="Hombre">Hombre</option>
+        <option value="Mujer">Mujer</option>
+        <option value="No especificado">Prefiero no especificar</option>
+      </select>
+    </div>
+
+    <label for="departamento">Departamento <span class="required">*</span></label>
+    <select id="departamento" name="departamento" required>
+      <option value="">Seleccionar departamento</option>
+      <option value="laboratorio">Laboratorio</option>
+      <option value="oncologia">Oncología</option>
+      <option value="bancodesangre">Banco de sangre</option>
+      <option value="otorrinolaringologia">Otorrinolaringología</option>
+      <option value="urologia">Urología</option>
+      <option value="dermatologia">Dermatología</option>
+      <option value="geriatria">Geriatría</option>
+      <option value="pediatria">Pediatría</option>
+    </select>
+
+    <label for="sintomas">Síntomas</label>
+    <textarea id="sintomas" name="sintomas"></textarea>
+
+    <button type="submit">Realizar cita</button>
+  </div>
+</form>
+
+
+        
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

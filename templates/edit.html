@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="/static/edit.css">
+<title>Editar</title>
+</head>
+<body>
+
+	<div class="form-container">
+		<h1>Editar registro</h1>
+		<form method="POST" action="/edit/{{ registro[0] }}">
+		  <div class="form-row">
+			<label for="login">Login:</label>
+			<input type="text" id="login" name="login" value="{{ registro[1] }}">
+		  </div>
+		  <div class="form-row">
+			<label for="password">Password:</label>
+			<input type="text" id="password" name="password" value="{{ registro[2] }}">
+		  </div>
+		  <div class="form-row">
+			<label for="nombre">Nombre:</label>
+			<input type="text" id="nombre" name="nombre" value="{{ registro[3] }}">
+		  </div>
+		  <div class="form-row">
+			<label for="apellido">Apellido:</label>
+			<input type="text" id="apellido" name="apellido" value="{{ registro[4] }}">
+		  </div>
+		  <div class="form-row">
+			<button type="submit">Guardar cambios</button>
+		  </div>
+		</form>
+		<a href="{{ url_for('pacientes') }}">Volver</a>
+	  </div>
+	  
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="Description" content="Enter your description here" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  <title>Locochona</title>
+
+</head>
+
+<body class="cuerpo">
+  <nav class="navbar navbar-expand-lg navbar-light mynavbar">
+    <div class="container-fluid">
+      <img class="icono" src="/static/images/icono.png" alt="...">
+        <a class="navbar-brand" href="">MedicaLocochona</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          <a class="nav-link active" href="especialidades.html">Especialidades</a>
+          <a class="nav-link active" href="servicios.html">Servicios</a>
+          <a class="nav-link active" href="pacientes.html">Pacientes</a>
+          <a class="nav-link active" href="citas.html">Crear Citas</a>
+          <a class="nav-link active" href="contactanos.html">Contactanos</a>
+          <a class="nav-link active"><button class="cerrar" id="cerrar-sesion">Cerrar sesion</button></a>
+          <!--<li><span class="navbar-text">Bienvenido, {{ username }}</span></li>
+          <!-- Button trigger modal -->
+        </div>
+      </div>
+    </div>
+  </nav>
+  <script>
+    const botonCerrarSesion = document.getElementById('cerrar-sesion');
+      botonCerrarSesion.addEventListener('click', cerrarSesion);
+
+      function cerrarSesion() {
+        // Eliminar cualquier información de sesión del usuario.
+
+        // Redirigir al usuario a la página de inicio de sesión.
+        window.location.href = '/';
+      }
+  </script>
+
+  <header>
+
+
+    <nav class="carrusel-container">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+            aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+            aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+            aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+            aria-label="Slide 4"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/static/images/doc1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/images/doc3.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/images/doc4.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="/static/images/doc2.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+
+    </nav>
+
+  </header>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

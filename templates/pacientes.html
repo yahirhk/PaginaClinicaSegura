@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="/static/style.css">
+<title>Pacientes</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light mynavbar">
+    <div class="container-fluid">
+      <img class="icono" src="/static/images/icono.png" alt="...">
+        <a class="navbar-brand" href="">MedicaLocochona</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          <a class="nav-link active" href="especialidades.html">Especialidades</a>
+          <a class="nav-link active" href="servicios.html">Servicios</a>
+          <a class="nav-link active" href="pacientes.html">Pacientes</a>
+          <a class="nav-link active" href="citas.html">Crear Citas</a>
+          <a class="nav-link active" href="contactanos.html">Contactanos</a>
+          <a class="nav-link active"><button class="cerrar" id="cerrar-sesion">Cerrar sesion</button></a>
+          <!--<li><span class="navbar-text">Bienvenido, {{ username }}</span></li>
+          <!-- Button trigger modal -->
+        </div>
+      </div>
+    </div>
+  </nav>
+  <script>
+    const botonCerrarSesion = document.getElementById('cerrar-sesion');
+      botonCerrarSesion.addEventListener('click', cerrarSesion);
+
+      function cerrarSesion() {
+        // Eliminar cualquier información de sesión del usuario.
+
+        // Redirigir al usuario a la página de inicio de sesión.
+        window.location.href = '/';
+      }
+  </script>
+<form action="/search" method="POST">
+  <!--Buscador de pacientes-->
+  <div class="input-group">
+   <input type="search" class="form-control rounded" placeholder="Buscar" name="query" aria-label="Search" aria-describedby="search-addon" />
+   <button type="submit" class="btn btn-primary">Buscar</button>
+ </div>
+
+ <hr>
+
+</form>
+
+<form >
+ <!--Buscador de pacientes-->
+ <div class="input-group">
+  <button class="btn btn-success"><a class="dropdown-item" href="/pacientes.html">Mostrar usuarios</a></button>
+</div>
+
+<hr>
+
+</form>
+
+
+<table class="usuarios">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Usuario</th>
+      <th>Contraseña</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  
+  
+
+  <tbody>
+
+    {% if patients %}
+  {% for patient in patients %}
+    <tr>
+      <td>{{ patient.id }}</td>
+      <td>{{ patient.login }}</td>
+      <td>{{ patient.password }}</td>
+      <td>{{ patient.nombre }}</td>
+      <td>{{ patient.apellido }}</td>
+      <td>
+        <div class="boton-container">
+          <a href="/edit/{{ patient.id }}">Editar</a>
+          <form method="POST" action="/delete/{{ patient.id }}">
+            <button type="submit">Eliminar</button>
+          </form>
+        </div>
+        <div class="boton-container">
+          <form method="GET" action="/add">
+            <button type="submit">Agregar</button>
+          </form>
+          <form method="GET" action="/pdf/{{ patient.id }}">
+            <button type="submit">Descargar PDF</button>
+          </form>
+        </div>
+      </td>
+      
+    </tr>
+    {% endfor %}
+    {% else %}
+    <tr>
+
+    </tr>
+    {% endif %}
+
+
+    {% for registro in registros %}
+    <tr>
+      <td>{{ registro[0] }}</td>
+      <td>{{ registro[1] }}</td>
+      <td>{{ registro[2] }}</td>
+      <td>{{ registro[3] }}</td>
+      <td>{{ registro[4] }}</td>
+      <td>
+        <div class="boton-container">
+          <a href="/edit/{{ registro[0] }}">Editar</a>
+          <form method="POST" action="/delete/{{ registro[0] }}">
+            <button type="submit">Eliminar</button>
+          </form>
+        </div>
+        <div class="boton-container">
+          <form method="GET" action="/add">
+            <button type="submit">Agregar</button>
+          </form>
+          <form method="GET" action="/pdf/{{ registro[0] }}">
+            <button type="submit">Descargar PDF</button>
+          </form>
+        </div>
+      </td>
+      
+    </tr>
+    {% endfor %}
+  </tbody>
+
+</table>
+
+
+
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>

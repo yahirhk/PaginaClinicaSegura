@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="/static/style.css">
+<title>Servicios</title>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light mynavbar">
+    <div class="container-fluid">
+      <img class="icono" src="/static/images/icono.png" alt="...">
+        <a class="navbar-brand" href="">MedicaLocochona</a>
+      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
+          <a class="nav-link active" href="especialidades.html">Especialidades</a>
+          <a class="nav-link active" href="servicios.html">Servicios</a>
+          <a class="nav-link active" href="pacientes.html">Pacientes</a>
+          <a class="nav-link active" href="citas.html">Crear Citas</a>
+          <a class="nav-link active" href="contactanos.html">Contactanos</a>
+          <a class="nav-link active"><button class="cerrar" id="cerrar-sesion">Cerrar sesion</button></a>
+          <!--<li><span class="navbar-text">Bienvenido, {{ username }}</span></li>
+          <!-- Button trigger modal -->
+        </div>
+      </div>
+    </div>
+  </nav>
+  <script>
+    const botonCerrarSesion = document.getElementById('cerrar-sesion');
+      botonCerrarSesion.addEventListener('click', cerrarSesion);
+
+      function cerrarSesion() {
+        // Eliminar cualquier información de sesión del usuario.
+
+        // Redirigir al usuario a la página de inicio de sesión.
+        window.location.href = '/';
+      }
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+</body>
+</html>
